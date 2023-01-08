@@ -31,4 +31,4 @@ function App() {
 
 export default App;
 
-// se encuentra en la primera lesson
+// se encuentra en la primera lesson de este documento
