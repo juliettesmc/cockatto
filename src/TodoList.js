@@ -1,17 +1,18 @@
-// import {react} from 'react'
+
+import TodoListItem from "./TodoListItem";
 
 function TodoList() {
   const todoList = [
-    { id: 1, title: "Complete assignment" },
-    { id: 2, title: "Complete assignment" },
-    { id: 3, title: "Complete assignment" },
+    { id: 1, title: "Wash the dishes" },
+    { id: 2, title: "Buy groceries" },
+    { id: 3, title: "Make the lunch" },
   ];
 
   return (
     <>
       <ul>
         {todoList.map((todo) => {
-          return <li key={todo.id}>{todo.title}</li>;
+          return <TodoListItem key={todo.id} todo={todo.title} />;
         })}
       </ul>
     </>
@@ -20,8 +21,3 @@ function TodoList() {
 
 export default TodoList;
 
-// JavaScript
-
-// JSX = Extensible JavaScript
-
-// HTML const myVar = 22

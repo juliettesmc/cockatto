@@ -1,17 +1,25 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-
-
-import React from "react";
-import TodoList from "./TodoList";
+import React, { useState } from "react";
+// import {TodoList} from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
+import TodoList from "./TodoList";
+// import React from "react";
 
 function App() {
+  const [newTodo, setNewTodo] = useState("");
+  // console.log(newTodo, setNewTodo);
+
+  function handleNewItem(item) {
+    setNewTodo(item);
+  }
   return (
     <div style={{ textAlign: "App" }}>
       <h1> Todo List </h1>
-      <AddTodoForm />
+
+      <AddTodoForm onAddnewTodo={handleNewItem} />
+      <p> {newTodo} </p>
+
       <TodoList />
+
       {/* <hr />
       <ul>
         {todoList.map(function (item) {
@@ -23,17 +31,3 @@ function App() {
 }
 
 export default App;
-
-// let todoList = [
-//   { title: "Complete assignment", ObjectID: 1 },
-//   {
-//     title: "Complete assignment",
-//     ObjectID: 2,
-//   },
-//   {
-//     title: "Complete assignment",
-//     ObjectID: 3,
-//   },
-// ];
-
-// function AddTodoForm() {}
