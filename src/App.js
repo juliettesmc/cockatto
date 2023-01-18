@@ -5,20 +5,25 @@ import TodoList from "./TodoList";
 // import React from "react";
 
 function App() {
-  const [newTodo, setNewTodo] = useState("");
+  // const [newTodo, setNewTodo] = useState("");
   // console.log(newTodo, setNewTodo);
 
+  const [todoList, setTodoList] = useState([]);
+
+
   function handleNewItem(item) {
-    setNewTodo(item);
+    setTodoList(item);
   }
+
   return (
     <div style={{ textAlign: "App" }}>
       <h1> Todo List </h1>
 
       <AddTodoForm onAddnewTodo={handleNewItem} />
-      <p> {newTodo} </p>
+      <TodoList todoList={todoList} />
+      {/* <p> {newTodo} </p> */}
 
-      <TodoList />
+      {/* <TodoList /> */}
 
       {/* <hr />
       <ul>
