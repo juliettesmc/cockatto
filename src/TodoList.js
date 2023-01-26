@@ -10,9 +10,14 @@ function TodoList(props) {
   return (
     <>
       <ul>
-        {props.todoList.map((todo) => {
+        {/* {props.todoList.map((todo) => {
           return <TodoListItem key={todo.id} todo={todo.title} />;
-        })}
+          
+        })} */}
+        {
+          props.todoList.map(item => <TodoListItem item={item} key={item.id} />) 
+          //this will map through the array of items listed
+        }
       </ul>
     </>
   );

@@ -9,21 +9,23 @@ function App() {
   // console.log(newTodo, setNewTodo);
 
   const [todoList, setTodoList] = useState([]);
+  const addTodo = (newTodo) => {
+    console.log(todoList)
+    setTodoList([...todoList, newTodo]);
+  };
 
-
-  function handleNewItem(item) {
-    setTodoList(item);
-  }
-
+  // function handleNewItem(item) {
+  //   setTodoList(item);
+  // }
+console.log(todoList)
   return (
     <div style={{ textAlign: "App" }}>
       <h1> Todo List </h1>
+      {/* <AddTodoForm onAddTodo={handleNewItem} /> */}
 
-      <AddTodoForm onAddnewTodo={handleNewItem} />
+      <AddTodoForm onAddTodo={addTodo} />
       <TodoList todoList={todoList} />
       {/* <p> {newTodo} </p> */}
-
-      {/* <TodoList /> */}
 
       {/* <hr />
       <ul>
@@ -36,3 +38,5 @@ function App() {
 }
 
 export default App;
+
+
