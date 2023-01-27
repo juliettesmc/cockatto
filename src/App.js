@@ -10,14 +10,14 @@ function App() {
 
   const [todoList, setTodoList] = useState([]);
   const addTodo = (newTodo) => {
-    console.log(todoList)
+    // console.log(todoList) para que se me vea el console
     setTodoList([...todoList, newTodo]);
   };
 
   // function handleNewItem(item) {
   //   setTodoList(item);
   // }
-console.log(todoList)
+// console.log(todoList)
   return (
     <div style={{ textAlign: "App" }}>
       <h1> Todo List </h1>

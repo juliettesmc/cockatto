@@ -15,7 +15,9 @@ function TodoList(props) {
           
         })} */}
         {
-          props.todoList.map(item => <TodoListItem item={item} key={item.id} />) 
+          props.todoList.map((item) => (
+            <TodoListItem item={item.title} key={item.id} />
+          ))
           //this will map through the array of items listed
         }
       </ul>
