@@ -1,6 +1,8 @@
+
 import TodoListItem from "./TodoListItem";
 
 function TodoList(props) {
+
   // const todoList = [
   //   { id: 1, title: "Wash the dishes" },
   //   { id: 2, title: "Buy groceries" },
@@ -18,6 +20,7 @@ function TodoList(props) {
           props.todoList.map((item) => (
             <TodoListItem item={item.title} key={item.id} />
           ))
+
           //this will map through the array of items listed
         }
       </ul>

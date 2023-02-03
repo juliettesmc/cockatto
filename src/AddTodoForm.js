@@ -10,6 +10,7 @@ function AddTodoForm(props) {
 
   const handleAddTodo = (event) => {
     event.preventDefault();
+   console.log(todoTitle)
     props.onAddTodo({ title: todoTitle, id: Date.now() });
     // props.onAddTodo(event.target[0].value);
     setTodoTitle(""); //this resets the input after hitting submit
