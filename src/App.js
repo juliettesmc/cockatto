@@ -30,15 +30,9 @@ function App() {
     console.log(todoList)
   };
 
-  // function removeTodo(id){
-  // todoList.filter(id)
-  // }
-
   const removeTodo = (id) => {
-    console.log(id);
-    const filteredArray = todoList.filter((e, index) => {
-      console.log(index);
-      return index !== id;
+    const filteredArray = todoList.filter((todo, index) => {
+      return todo.id !== id;
     });
 
     setTodoList(filteredArray);
@@ -50,8 +44,9 @@ function App() {
       <h1> Todo List </h1>
       <AddTodoForm onAddTodo={addTodo} />  
        {/* agregandp el addtoodo pasansolo como props  */}
-      <TodoList todoList={todoList} />
-      {/* <removeTodo onRemoveTodo={todoList}/> */}
+      
+      <TodoList todoList={todoList} onRemoveTodo={removeTodo} /> 
+       {/* pasar removeTodo como accesorio de controlador de devolucion de llamadas */}
     </>
   );
 }

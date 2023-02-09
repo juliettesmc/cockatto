@@ -1,9 +1,18 @@
 // import {react} from 'react'
 
-function TodoListItem(props) {
-  return <li>{props.item}</li>;
+import React from "react";
 
-  <button>Remove</button>
+function TodoListItem(props) {
+const onRemoveTodo=()=>{
+  // props.onRemoveTodo(props.item.id)
+}
+  return (
+  <React.Fragment>
+ <li>{props.item.title}
+<button onClick= {onRemoveTodo} > Remove </button> </li>
+</React.Fragment>
+)
 }
 
 export default TodoListItem;
+

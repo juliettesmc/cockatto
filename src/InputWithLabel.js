@@ -22,13 +22,8 @@ return(
           value={props.todoTitle}
           onChange={props.handleTitleChange}
         />
-     
-    
-   
     </React.Fragment>
 )
 }
-
-
 
 export default InputWithLabel;
