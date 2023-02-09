@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 // import {TodoList} from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
+
 // import React from "react";
+
 
 function useSemiPersistentState() {
   // console.log(JSON.parse(localStorage.getItem("todoList")))
@@ -28,11 +30,23 @@ function App() {
     console.log(todoList)
   };
 
+  const removeTodo = (id) => {
+    const filteredArray = todoList.filter((todo, index) => {
+      return todo.id !== id;
+    });
+
+    setTodoList(filteredArray);
+  };
+
+
   return (
     <>
       <h1> Todo List </h1>
-      <AddTodoForm onAddTodo={addTodo} />
-      <TodoList todoList={todoList} />
+      <AddTodoForm onAddTodo={addTodo} />  
+       {/* agregandp el addtoodo pasansolo como props  */}
+      
+      <TodoList todoList={todoList} onRemoveTodo={removeTodo} /> 
+       {/* pasar removeTodo como accesorio de controlador de devolucion de llamadas */}
     </>
   );
 }
