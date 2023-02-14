@@ -6,25 +6,35 @@ import TodoList from "./TodoList";
 
 // import React from "react";
 
-
-function useSemiPersistentState() {
-  // console.log(JSON.parse(localStorage.getItem("todoList")))
-  const TodoList = localStorage.getItem("todoList")
-    ? JSON.parse(localStorage.getItem("todoList"))
-    : [];
-  
-  const [todoList, setTodoList] = useState(
-   TodoList
-  );
-
-  useEffect(() => {
-    localStorage.setItem("todoList", JSON.stringify(todoList));
-  }, [todoList]); //dependent lo que hace es buscar.
-  return [todoList, setTodoList];
-}
-
 function App() {
-  const [todoList, setTodoList] = useSemiPersistentState();
+
+const [todoList, setTodoList] = useState(
+  localStorage.getItem("todoList")
+  ? JSON.parse(localStorage.getItem("todoList"))
+  : []
+  // cuando tiene mayusculas son componentes y minsculas variables,state
+);
+
+useEffect(() => {
+  const Promise =( (resolve, reject) => {
+setTimeout(function(){
+  // ()=>resolve({data:{JSON.parse(localStorage.getItem('todoList'))}})
+console.log ('2 second has passed')
+},2000)
+Promise.then(result=>{
+this.setState({todoList:result});
+})
+
+  .then(resolve=>resolve.JSON.parse(localStorage.getItem("todoList")))
+  .then(data=>console.log(data))
+   })
+   
+},[])
+// debajo del todoList estado, definir un nuevo useEffect gancho 
+// react con una list de dependencias vacia.
+useEffect(() => {
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+}, [todoList]); //dependent lo que hace es buscar.
   const addTodo = (newTodo) => {
     setTodoList([...todoList, newTodo]);
     console.log(todoList)
