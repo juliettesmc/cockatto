@@ -33,6 +33,7 @@ useEffect(() => {
       console.log(result)
       setTodoList([...result.data.todoList])
       setIsLoading(false); 
+      // isLoading(false);
       console.log(result);
   });
 }, []);
@@ -40,13 +41,10 @@ useEffect(() => {
 
 useEffect(() => {
 
-// if (isLoading) {
-//  return <p>'Loading...'</p>
-// } else {
-//   return todoList
-// }
+if (isLoading) {
 
-  localStorage.setItem("todoList", JSON.stringify(todoList));
+  localStorage.setItem("todoList", JSON.stringify(todoList));}
+
 }, [todoList,isLoading]); //dependent lo que hace es buscar.
 
   const addTodo = (newTodo) => {
@@ -69,8 +67,14 @@ useEffect(() => {
       <AddTodoForm onAddTodo={addTodo} />  
        {/* agregandp el addtoodo pasansolo como props  */}
       
+      {isLoading?(
+        "Loading"
+      ):(
+
       <TodoList todoList={todoList} onRemoveTodo={removeTodo} /> 
+      )}
        {/* pasar removeTodo como accesorio de controlador de devolucion de llamadas */}
+       
     </>
   );
 }
