@@ -25,12 +25,12 @@ function App() {
         },
       }
     )
-      .then((resp) => console.log(resp.json()))
+      .then((resp) =>resp.json())
       .then((result) => {
         console.log(result.records);
           setTodoList([...result.records]); //result es mi variable
           setIsLoading(false);
-          console.log(result.records);
+          console.log(result.records)
       })
       .catch((error) => {
         console.error(error);

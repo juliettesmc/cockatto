@@ -8,7 +8,7 @@ const onRemoveTodo=()=>{
 }
   return (
   <React.Fragment>
- <li>{props.item.title}
+ <li>{props.item.fields.Title}
 <button onClick= {onRemoveTodo} > Remove </button> </li>
 </React.Fragment>
 )
