@@ -3,7 +3,19 @@ import React, { useState, useEffect } from "react";
 // import {TodoList} from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
-// import React from "react";
+
+// import { BrowserRouter as Routes, Route } from 'react-router-dom';
+// export default function App() {
+//   return (
+//     <Routes>
+//       <Route path="/New" component={about} />
+//     </Routes>
+//   );
+// }
+
+// function about() {
+//   return <>New</>   
+// }
 
 function App() {
   const [todoList, setTodoList] = useState(
