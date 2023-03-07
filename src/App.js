@@ -4,19 +4,23 @@ import React, { useState, useEffect } from "react";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 
-// import { BrowserRouter as Routes, Route } from 'react-router-dom';
-// export default function App() {
-//   return (
-//     <Routes>
-//       <Route path="/New" component={about} />
-//     </Routes>
-//   );
-// }
+import { BrowserRouter as Routes, Route } from 'react-router-dom';
+
+function NewRoute() {
+  return (
+    <Routes>
+      <Route path="" element={NewRoute}></Route>
+        <Route path="" element={<h1>New todo list</h1>}></Route>
+    </Routes>
+  
+  );
+}
 
 // function about() {
 //   return <>New</>   
 // }
 
+NewRoute()
 function App() {
   const [todoList, setTodoList] = useState(
     localStorage.getItem("todoList")
