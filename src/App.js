@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // import {TodoList} from "./TodoList";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
-// import React from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [todoList, setTodoList] = useState(
@@ -76,8 +76,15 @@ function App() {
   };
 
   return (
-    <>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <>
       <h1> Todo List </h1>
+      <h1> New Todo List </h1>
       <AddTodoForm onAddTodo={addTodo} />
       {/* agregandp el addtoodo pasansolo como props  */}
 
@@ -85,13 +92,13 @@ function App() {
         "Loading"
       ) : (
         <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
-      )}
-      {/* pasar removeTodo como accesorio de controlador de devolucion de llamadas */}
-    </>
-  );
+        )}
+        </>
+      }
+    />
+    <Route exact path="/new" element={<h1> Todo List </h1>} />
+  </Routes>
+</BrowserRouter>
+);
 }
-
 export default App;
-// <> fragmentos.
-
-// keyMyid97CToDfGBB
