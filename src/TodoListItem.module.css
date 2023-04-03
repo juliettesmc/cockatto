@@ -1,0 +1,56 @@
+
+.ListItem {
+    color: rgb(117, 10, 110);
+    text-shadow: 1px 1px #fff;
+    font-size: medium;
+    margin: 8px;
+    font-weight: bold;
+}
+
+.title{
+    padding: 10px;
+    background-color: rgb(235, 28, 201);
+    width: 150px;
+    border: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 20px;
+    cursor: pointer;
+    text-shadow: -2px -2px 1px #d99cbf;
+    border-radius: 20px;
+ 
+}
+
+.boton{
+    padding: 10px;
+    background-color: rgb(232, 162, 220); 
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.imagen{
+background-color: rgb(247, 235, 243);
+height: 900px;
+}
+
+.sub{
+    padding: 10px;
+    background-color: rgb(178, 6, 149); 
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.header{
+  
+    background-color: rgb(242, 160, 228);
+    width: 250px;
+    border: 150px;
+    text-align: center;
+    margin: 5px 20px;
+    cursor: pointer;
+    text-shadow: -2px -2px 1px #ea1587;
+    border-radius: 20px;
+ 
+}
+
