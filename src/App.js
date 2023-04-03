@@ -4,8 +4,11 @@ import React, { useState, useEffect } from "react";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./TodoList";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import style from "./TodoListItem.module.css";
+
 
 function App() {
+
   const [todoList, setTodoList] = useState(
     localStorage.getItem("todoList")
       ? JSON.parse(localStorage.getItem("todoList"))
@@ -82,9 +85,11 @@ function App() {
           exact
           path="/"
           element={
-            <>
-      <h1> Todo List </h1>
-      <h1> New Todo List </h1>
+            <div className={style.imagen}>
+             
+      <h1 className={style.title}> Todo List </h1>
+      <h1 className={style.header}> New Todo List </h1>
+      
       <AddTodoForm onAddTodo={addTodo} />
       {/* agregandp el addtoodo pasansolo como props  */}
 
@@ -93,7 +98,7 @@ function App() {
       ) : (
         <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
         )}
-        </>
+        </div>
       }
     />
     <Route exact path="/new" element={<h1> Todo List </h1>} />
