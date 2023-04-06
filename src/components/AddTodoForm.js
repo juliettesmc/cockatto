@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import InputWithLabel from "./InputWithLabel";
-import style from "./TodoListItem.module.css";
+import style from "../TodoListItem.module.css";
+import PropTypes from 'prop-types'
 
 function AddTodoForm(props) {
   const [todoTitle, setTodoTitle] = useState("");
 
+  const propTypes= {
+    onAddTodo:PropTypes.func  
+  }
+  console.log(propTypes);
+  
   const handleTitleChange = (event) => {
     const newTodoTitle = event.target.value;
     // console.log(newTodoTitle);para mirarlos en mi console.log
@@ -13,7 +19,7 @@ function AddTodoForm(props) {
 
   const handleAddTodo = (event) => {
     event.preventDefault();
-   console.log(todoTitle)
+    console.log(todoTitle);
     props.onAddTodo({ title: todoTitle, id: Date.now() });
     // props.onAddTodo(event.target[0].value);
     setTodoTitle(""); //this resets the input after hitting submit
@@ -21,10 +27,17 @@ function AddTodoForm(props) {
   };
   return (
     <form onSubmit={handleAddTodo}>
-      <InputWithLabel todoTitle={todoTitle} handleTitleChange={handleTitleChange}> Title </InputWithLabel >
-    
-        <button className={style.sub} type="submit">Add</button>
-     
+      <InputWithLabel
+        todoTitle={todoTitle}
+        handleTitleChange={handleTitleChange}
+      >
+        {" "}
+        Title{" "}
+      </InputWithLabel>
+
+      <button className={style.sub} type="submit">
+        Add
+      </button>
     </form>
   );
 }

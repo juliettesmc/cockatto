@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 
 function InputWithLabel(props) {
@@ -9,6 +10,11 @@ function InputWithLabel(props) {
     inputRef.current.focus();   //llamar dentro de la funcion de controlador de efectos llamar al metodo
     });
 
+    const propTypes= {
+        onAddTodo:PropTypes.func
+        
+      }
+      console.log(propTypes);
 return(
     <React.Fragment>
    
