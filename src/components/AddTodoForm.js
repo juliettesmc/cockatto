@@ -10,7 +10,7 @@ function AddTodoForm(props) {
     onAddTodo:PropTypes.func  
   }
   console.log(propTypes);
-  
+
   const handleTitleChange = (event) => {
     const newTodoTitle = event.target.value;
     // console.log(newTodoTitle);para mirarlos en mi console.log

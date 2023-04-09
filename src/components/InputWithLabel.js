@@ -15,6 +15,7 @@ function InputWithLabel(props) {
         
       }
       console.log(propTypes);
+      
 return(
     <React.Fragment>
    
