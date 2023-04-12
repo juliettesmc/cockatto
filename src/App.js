@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 // import React, { useState } from "react";
 // import {TodoList} from "./TodoList";
-import AddTodoForm from "./AddTodoForm";
-import TodoList from "./TodoList";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AddTodoForm from "./components/AddTodoForm";
+import TodoList from "./components/TodoList";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import style from "./TodoListItem.module.css";
 
-
 function App() {
-
   const [todoList, setTodoList] = useState(
     localStorage.getItem("todoList")
       ? JSON.parse(localStorage.getItem("todoList"))
@@ -28,12 +26,12 @@ function App() {
         },
       }
     )
-      .then((resp) =>resp.json())
+      .then((resp) => resp.json())
       .then((result) => {
         console.log(result.records);
-          setTodoList([...result.records]); //result es mi variable
-          setIsLoading(false);
-          console.log(result.records)
+        setTodoList([...result.records]); //result es mi variable
+        setIsLoading(false);
+        console.log(result.records);
       })
       .catch((error) => {
         console.error(error);
@@ -86,24 +84,23 @@ function App() {
           path="/"
           element={
             <div className={style.imagen}>
-             
-      <h1 className={style.title}> Todo List </h1>
-      <h1 className={style.header}> New Todo List </h1>
-      
-      <AddTodoForm onAddTodo={addTodo} />
-      {/* agregandp el addtoodo pasansolo como props  */}
+              <h1 className={style.title}> Todo List </h1>
+              <h1 className={style.header}> New Todo List </h1>
 
-      {isLoading ? (
-        "Loading"
-      ) : (
-        <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
-        )}
-        </div>
-      }
-    />
-    <Route exact path="/new" element={<h1> Todo List </h1>} />
-  </Routes>
-</BrowserRouter>
-);
+              <AddTodoForm onAddTodo={addTodo} />
+              {/* agregandp el addtoodo pasansolo como props  */}
+
+              {isLoading ? (
+                "Loading"
+              ) : (
+                <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
+              )}
+            </div>
+          }
+        />
+        <Route exact path="/new" element={<h1> Todo List </h1>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 export default App;
