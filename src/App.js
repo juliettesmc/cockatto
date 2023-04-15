@@ -18,7 +18,7 @@ function App() {
   console.log(process.env);
   useEffect(() => {
     fetch(
-      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`,
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default?view=jsmc&sort[0][field]=Title&sort[0][direction]=asc`,
       {
         method: "GET",
         headers: {
@@ -26,9 +26,20 @@ function App() {
         },
       }
     )
+    
       .then((resp) => resp.json())
       .then((result) => {
         console.log(result.records);
+        //  result.records.sort((objA,objB) => ( -1 > 1 ? 0:1 ));
+        result.records.sort((objA, objB) => {
+          if (objA.fields.Title < objB.fields.Title) {
+            return 1;
+          } else if (objA.fields.Title > objB.fields.Title) {
+            return -1;
+          } else {
+            return 0;
+          }
+        });
         setTodoList([...result.records]); //result es mi variable
         setIsLoading(false);
         console.log(result.records);
