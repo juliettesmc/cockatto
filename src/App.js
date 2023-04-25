@@ -95,8 +95,12 @@ function App() {
           path="/"
           element={
             <div className={style.imagen}>
-              <h1 className={style.title}> Todo List </h1>
-              <h1 className={style.header}> New Todo List </h1>
+              <div className={style.navigations}><button className={style.login} onClick= {()=>console.log("hello")} >Home</button> <button className={style.log} onClick= {()=>console.log("hi")}>About</button></div>
+              
+   
+              <div  className={style.myImage}><h1 className={style.title}> Todo List </h1></div>
+              <div className={style.header}> New Todo List </div>
+              
 
               <AddTodoForm onAddTodo={addTodo} />
               {/* agregandp el addtoodo pasansolo como props  */}
@@ -104,7 +108,7 @@ function App() {
               {isLoading ? (
                 "Loading"
               ) : (
-                <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
+                <TodoList todoList= {todoList} onRemoveTodo= {removeTodo} />
               )}
             </div>
           }
