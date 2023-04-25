@@ -11,15 +11,16 @@
     padding: 10px;
     background-color: rgb(235, 28, 201);
     width: 150px;
-    border: 15px;
+    border: 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 5px 20px;
+    margin: 20px 20px;
     cursor: pointer;
     text-shadow: -2px -2px 1px #d99cbf;
-    border-radius: 20px;
- 
+    border-radius: 200px;
+    font-size:xx-large;
+   
 }
 
 .boton{
@@ -27,11 +28,15 @@
     background-color: rgb(232, 162, 220); 
     font-weight: bold;
     border-radius: 20px;
+    font-size: smaller;
 }
 
 .imagen{
-background-color: rgb(247, 235, 243);
+
 height: 900px;
+text-align: center;
+background-image:url("./../../imagenes/logo.JPG");
+font-size: xx-large;
 }
 
 .sub{
@@ -43,13 +48,44 @@ height: 900px;
 
 .header{
   
-    background-color: rgb(242, 160, 228);
-    width: 250px;
-    border: 150px;
-    text-align: center;
-    margin: 5px 20px;
+    width: auto;
+    border: 5px;
+    margin: 10px 20px;
     cursor: pointer;
     text-shadow: -2px -2px 1px #ea1587;
-    border-radius: 20px;
+    border-radius: 200px;
+    text-align: center;
+    font-size: medium;
  
 }
+
+ul{
+    list-style-type: style type;;
+   width: 250px;
+   margin: auto;
+   right: 250px;
+   left: 300px;
+    
+}
+
+
+.navigations{
+    background-color: rgb(120, 5, 101);
+    width: auto;
+    border: 150px;
+
+}
+
+.login{
+    color: #ea1587;
+    font-weight: bolder;
+}
+
+.log{
+    color: #ea1587;
+    font-weight: bolder;
+}
+
+  @media screen and (max-width: 600px) {
+  }
+  

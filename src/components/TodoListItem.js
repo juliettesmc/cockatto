@@ -17,7 +17,7 @@ console.log(propTypes);
   return (
   <React.Fragment>
  <li className={style.ListItem}>{props.item.fields ? props.item.fields.Title : props.item.title}
-<button className={style.boton} onClick= {onRemoveTodo} > Remove </button> </li>
+<button className={ style.boton} onClick=  { onRemoveTodo} > Remove </ button> </li>
 </React.Fragment>
 )
 }
